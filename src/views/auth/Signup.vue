@@ -1,0 +1,41 @@
+<template>
+  <form class="recipe-form" @submit.prevent="handleSubmit">
+    <h3>Sign up</h3>
+    <input class="recipe-input" type="text" placeholder="Your name" v-model="displayName">
+    <input class="recipe-input" type="email" placeholder="Email" v-model="email">
+    <input class="recipe-input" type="password" placeholder="Password" v-model="password">
+    <div class="error" v-if="error">{{ error }}</div>
+    <button v-if="!isPending">Sign up</button>
+    <button v-else disabled>Processing</button>
+  </form>
+</template>
+
+<script>
+import useSignup from '@/composables/useSignup'
+import { ref } from '@vue/reactivity'
+import { useRouter } from 'vue-router'
+
+export default {
+  setup() {
+    const { signUp, error, isPending } = useSignup()
+    const email = ref('')
+    const password = ref('')
+    const displayName = ref('')
+    const router = useRouter()
+
+    const handleSubmit = async () => {
+      const res = await signUp(email.value, password.value, displayName.value)
+      if (!error.value) {
+        router.push({ name: 'UserRecipes' })
+      }
+      return res
+    }
+
+    return { email, password, handleSubmit, error, isPending, displayName }
+  }
+}
+</script>
+
+<style>
+
+</style>

@@ -1,0 +1,45 @@
+    <!-- Favorites -->
+    <router-link :to="{ name: 'Favorites' }" class="nav-link">
+      <span class="material-icons icon">favorite</span>
+      <span>My Favorites</span>
+    </router-link>
+    <!-- Breakfasts -->
+    <router-link :to="{ name: 'Breakfast' }" class="nav-link">
+      <span class="material-icons icon">bakery_dining</span>
+      <span>Breakfast</span>
+    </router-link>
+    <!-- Lunch -->
+    <router-link :to="{ name: 'Lunch' }" class="nav-link">
+      <span class="material-icons icon">lunch_dining</span>
+      <span>Lunch</span>
+    </router-link>
+    <!-- Dinners -->
+    <router-link :to="{ name: 'Dinner' }" class="nav-link">
+      <span class="material-icons icon">dinner_dining</span>
+      <span>Dinner</span>
+    </router-link>
+    <!-- Suppers -->
+    <router-link :to="{ name: 'Supper' }" class="nav-link">
+      <span class="material-icons icon">set_meal</span>
+      <span>Supper</span>
+    </router-link>
+    <!-- Dessert -->
+    <router-link :to="{ name: 'Dessert' }" class="nav-link">
+      <span class="material-icons icon">icecream</span>
+      <span>Dessert</span>
+    </router-link>
+    <!-- Fast Food -->
+    <router-link :to="{ name: 'Fastfood' }" class="nav-link">
+      <span class="material-icons icon">local_pizza</span>
+      <span>Fast Food</span>
+    </router-link>
+    <!-- Vege -->
+    <router-link :to="{ name: 'Vege' }" class="nav-link">
+      <span class="material-icons icon">spa</span>
+      <span>Vege</span>
+    </router-link>
+    <!-- Fit recipes -->
+    <router-link :to="{ name: 'Fit' }" class="nav-link">
+      <span class="material-icons icon">fitness_center</span>
+      <span>Fit recipes</span>
+    </router-link>
