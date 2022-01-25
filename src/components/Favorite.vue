@@ -21,12 +21,13 @@ import getUser from '../composables/getUser'
 import useDocument from '../composables/useDocument'
 import useCollection from '../composables/useCollection'
 import { projectFirestore } from '../firebase/config'
+import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+
 export default {
   props: ['recipeId'],
   setup(props, context) {
     const { user } = getUser()
 
-   import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 
    const recipeRef = doc(projectFirestore, "recipes", recipeId)
 
