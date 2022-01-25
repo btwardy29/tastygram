@@ -6,6 +6,16 @@ import CreateRecipe from '../views/recipes/CreateRecipe.vue'
 import RecipeDetails from '../views/recipes/RecipeDetails.vue'
 import UserRecipes from '../views/recipes/UserRecipes.vue'
 import Fit from '../views/recipes/Fit.vue'
+import Breakfast from '../views/recipes/Breakfast.vue'
+import Lunch from '../views/recipes/Lunch.vue'
+import Dinner from '../views/recipes/Dinner.vue'
+import Supper from '../views/recipes/Supper.vue'
+import Dessert from '../views/recipes/Dessert.vue'
+import Fastfood from '../views/recipes/Fastfood.vue'
+import Vege from '../views/recipes/Vege.vue'
+import Fish from '../views/recipes/Fish.vue'
+import Chicken from '../views/recipes/Chicken.vue'
+import Favourite from '../views/recipes/Favourite.vue'
 
 import { auth } from '../firebase/config'
 
@@ -58,6 +68,66 @@ const routes = [
     path: '/recipes/fit',
     name: 'Fit',
     component: Fit,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/breakfast',
+    name: 'Breakfast',
+    component: Breakfast,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/lunch',
+    name: 'Lunch',
+    component: Lunch,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/dinner',
+    name: 'Dinner',
+    component: Dinner,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/supper',
+    name: 'Supper',
+    component: Supper,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/dessert',
+    name: 'Dessert',
+    component: Dessert,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/fastfood',
+    name: 'Fastfood',
+    component: Fastfood,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/vege',
+    name: 'Vege',
+    component: Vege,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/fish',
+    name: 'Fish',
+    component: Fish,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/chicken',
+    name: 'Chicken',
+    component: Chicken,
+    beforeEnter: requireAuth,
+  },
+  {
+    path: '/recipes/favourite',
+    name: 'Favourite',
+    component: Favourite,
     beforeEnter: requireAuth,
   },
 ]

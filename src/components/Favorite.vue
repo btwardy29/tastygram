@@ -20,19 +20,16 @@ import getDocument from '../composables/getDocument'
 import getUser from '../composables/getUser'
 import useDocument from '../composables/useDocument'
 import useCollection from '../composables/useCollection'
+import { projectFirestore } from '../firebase/config'
 export default {
   props: ['recipeId'],
   setup(props, context) {
     const { user } = getUser()
-    const favId = `${user.value.uid}_${props.recipeId}`
-    const { _document: favorite } = getDocument('favorites', favId)
-    const { deleteDocument } = useDocument('favorites', favId)
-    const { setDocument } = useCollection('favorites')
-    const randomVal = ref(1)
-    const data = {
-      userId: user.value.uid,
-      recipeId: props.recipeId
-    }
+
+   import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+
+   const recipeRef = doc(projectFirestore, "recipes", recipeId)
+
     const handleRemove = async () => {
       await deleteDocument()
       context.emit('removeFav')

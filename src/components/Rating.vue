@@ -16,7 +16,7 @@
       <label for="star1" title="text">1 star</label>
     </div>
   </form>
-    <p class="rate-title">Average: <span class="bold">{{ avgMark }}</span></p>
+    <p class="rate-title">Average: <span class="bold">{{ avgMark && avgMark.toFixed(1) }}</span></p>
     <p class="rate-title up">Total votes: <span class="bold">{{ markCount }}</span></p>
   </div>
 </template>
@@ -35,9 +35,7 @@ export default {
     const docId = `${user.value.uid}_${props.recipeId}`
     const { avgMark, myMark, markCount } = getRating('rating', props.recipeId, user.value.uid)
     const { setDocument } = useCollection('rating')
-    const markArray = []
     const number = ref(myMark)
-    console.log('test', myMark.value)
     const handleSubmit = async () => {
       await setDocument({
         mark: parseFloat(number.value),

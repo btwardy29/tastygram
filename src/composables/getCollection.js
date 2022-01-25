@@ -21,9 +21,7 @@ const getCollection = (_collection, _query) => {
     })
     documents.value = results
     error.value = null
-    console.log(documents.value)
   }, (err) => {
-    console.log(err.message)
     documents.value = null
     error.value = 'Could not fetch data.'
   })

@@ -37,7 +37,6 @@ const getRating = (_collection, recipeId, userId) => {
     } else {
       error.value = 'That document does not exist.'
     }
-    console.log(myMark.value)
   })
   
   watchEffect((onInvalidate) => {

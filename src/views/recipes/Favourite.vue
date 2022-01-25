@@ -1,10 +1,13 @@
 <template>
   <div class="user-recipes">
-   <h2>My Recipes</h2>
-   <div v-if="recipes">
-     <ListView :recipes="recipes" />
-   </div>
-   <router-link :to="{name: 'CreateRecipe'}" class="btn">Create a new Recipe</router-link>
+    <h2>Favorite Recipes</h2>
+    <div v-if="recipes && recipes.length">
+      <ListView :recipes="recipes" />
+    </div>
+    <div v-else>
+      <p class="warning">You don't have any favorite recipes 😔💔 Maybe add some...?</p>
+      <router-link :to="{name: 'CreateRecipe'}" class="btn">Create a new Recipe</router-link>
+    </div>
   </div>
 </template>
 
@@ -18,7 +21,7 @@ export default {
   setup() {
     const { user } = getUser()
     const { documents: recipes } = getCollection(
-      'recipes',
+      'favorites',
       ['userId', '==', user.value.uid] 
     )
 
@@ -29,6 +32,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .warning {
+    padding: 20px 0;
+  }
 </style>

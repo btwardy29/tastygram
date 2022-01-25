@@ -94,19 +94,21 @@ export default {
   }
   .cover {
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 10px;
     position: relative;
     padding: 160px;
+
   }
+
   .cover img {
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    max-width: 100%;
-    max-height: 200%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-height: 150%;
+    max-width: 150%;
+    
   }
   .recipe-info {
     text-align: center;

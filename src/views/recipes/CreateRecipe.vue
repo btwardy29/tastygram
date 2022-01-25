@@ -81,7 +81,6 @@ export default {
     const ingredients = ref([])
 
     const handleDeleteIngredient = (id) => {
-      console.log(id)
       ingredients.value = ingredients.value.filter(ingredient => ingredient !== id)
     }
 

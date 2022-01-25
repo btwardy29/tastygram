@@ -28,7 +28,7 @@
     gap: 5px
     }
 }
-@media only screen and (min-width: 801px) {
+@media only screen and (max-width: 1500px) {
   .container {
     display: grid;
     grid-template-columns: 2fr 7fr;
@@ -36,6 +36,19 @@
   }
 
 }
+
+@media only screen and (min-width: 1501px) {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 7fr;
+    gap: 5px;
+    max-width: 1500px;
+    margin: 0 auto;
+  }
+
+}
+
+
   .content {
     
     max-width: 100%;
